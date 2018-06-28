@@ -1,0 +1,62 @@
+{
+  "currentDay": {
+    "date": [5, 6],
+    "all": 2000,
+    "spent": 0,
+    "left": 0
+  },
+  "items": {
+    "food": {
+      "name": "Еда",
+      "all": 31000,
+      "spent": 0,
+      "left": 0
+    },
+    "walks": {
+      "name": "Прогулки",
+      "all": 5000,
+      "spent": 0,
+      "left": 0
+    },
+    "apartment": {
+      "name": "Кварплата",
+      "all": 6000,
+      "spent": 0,
+      "left": 0
+    },
+    "travel": {
+      "name": "Проездные",
+      "all": 5000,
+      "spent": 0,
+      "left": 0
+    },
+    "phone": {
+      "name": "Телефоны",
+      "all": 1000,
+      "spent": 0,
+      "left": 0
+    },
+    "fund": {
+      "name": "Запас",
+      "all": 3000,
+      "spent": 0,
+      "left": 0
+    }
+  },
+  "history": [
+    {
+      "groups": "phone",
+      "date": "01.02.2018",
+      "sum": 300,
+      "comment": "Коментарий 1",
+      "author": "admin"
+    },
+    {
+      "groups": "apartment",
+      "date": "01.02.2018",
+      "sum": 200,
+      "comment": "Коментарий 2",
+      "author": "admin"
+    }
+  ]
+}

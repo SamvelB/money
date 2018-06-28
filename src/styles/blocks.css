@@ -1,0 +1,81 @@
+.blocks {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.block {
+    margin: 0 0 5px;
+    padding: 12px 16px;
+    width: 100%;
+    background: #fff;;
+    border-top: solid 1px #ebebeb;
+    border-right: solid 1px #e5e5e5;
+    border-left: solid 1px #e5e5e5;
+    border-bottom: solid 1px #cecece;
+}
+
+.block:last-child {
+    margin: 0;
+}
+
+.block-button {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.block-icon {
+    margin: 0 20px 0 0;
+    flex: 0 0 auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+.block-icon.block-icon--0 {background: #61c057 url("./images/icon-0.svg") center center / 70% no-repeat;  }
+.block-icon.block-icon--1 {background: #42b5c0 url("./images/icon-1.svg") center center / 65% no-repeat;  }
+.block-icon.block-icon--2 {background: #eab947 url("./images/icon-2.svg") center center / 65% no-repeat;  }
+.block-icon.block-icon--3 {background: #dc4aca url("./images/icon-3.svg") center center / 65% no-repeat;  }
+.block-icon.block-icon--4 {background: #8155e0 url("./images/icon-4.svg") center center / 75% no-repeat;  }
+.block-icon.block-icon--5 {background: #ea7449 url("./images/icon-5.svg") center center / 60% no-repeat;  }
+
+.block-info {
+    width: 100%;
+}
+
+.block-info-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.block-info-header-title {
+    margin: 0;
+    font-size: 16px;
+    color: #7f7f7f;
+}
+.block-info-header-all {
+    font-size: 14px;
+    color: #7f7f7f;
+}
+
+.block-info-money {
+    margin: 6px 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.block-info-money-aaa {
+    font-size: 14px;
+    color: #ee4f77;
+}
+
+.block-info-money-bbb {
+    font-size: 16px;
+    font-weight: bold;
+    color: #00a369;
+}

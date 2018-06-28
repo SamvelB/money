@@ -1,0 +1,38 @@
+.money-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+}
+.money-info-day,
+.money-info-period {
+    width: 80px;
+    text-align: center;
+}
+.money-info-day-number {
+    font-size: 30px;
+    font-weight: bold;
+}
+.money-info-day-simbol {
+    font-size: 14px;
+}
+.money-info-day-day {
+    font-size: 14px;
+}
+.money-info-sum {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0 50px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+}
+.money-info-period-date {
+    font-size: 22px;
+}
+.money-info-period-month {
+    padding: 3px 0 0;
+    font-size: 14px;
+}

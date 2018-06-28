@@ -1,0 +1,255 @@
+div {
+  box-sizing: border-box;
+}
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: #f30000; /* delete */
+}
+#root {
+  position: relative;
+}
+
+.wrapper {
+  position: relative;
+  padding: 15px 10px;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(100% - 130px);
+  background: #ededed;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  background: #2bb971;
+  background: linear-gradient(45deg, #fb83fa 0%,#e5de1d 100%);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  padding: 0 30px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  border-top: solid 1px #e5e5e5;
+}
+
+.footer-button {
+  width: 75px;
+  height: 50px;
+  background: none;
+  border: none;
+  outline: none;
+  border-top: solid 2px #44bd61;
+}
+
+
+.blocks {
+
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  border: solid 1px #ddd;
+}
+
+.block {
+  margin: 10px 0;
+  padding: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  border-top: solid 1px #ebebeb;
+  border-right: solid 1px #e5e5e5;
+  border-left: solid 1px #e5e5e5;
+  border-bottom: solid 2px #cecece;
+}
+
+.block-button {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.block-icon {
+  margin: 0 20px 0 0;
+  flex: 0 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+.block-icon.red {background-color: #f2f3e4
+}
+
+.block-info {
+  width: 100%;
+}
+
+.block-info-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.block-info-header-title {
+  margin: 0;
+  font-size: 16px;
+  color: #7f7f7f;
+}
+.block-info-header-all {
+  font-size: 14px;
+  color: #7f7f7f;
+}
+
+.block-info-money {
+  margin: 6px 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.block-info-money-left {
+  font-size: 14px;
+  color: #ee4f77;
+}
+
+.block-info-money-spent {
+  font-size: 16px;
+  font-weight: bold;
+  color: #00a369;
+}
+
+
+
+
+
+
+
+
+
+
+
+.money-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+}
+.money-info-day,
+.money-info-period {
+  width: 80px;
+  text-align: center;
+}
+.money-info-day-number {
+  font-size: 30px;
+  font-weight: bold;
+}
+.money-info-day-simbol {
+  font-size: 14px;
+}
+.money-info-day-day {
+  font-size: 14px;
+}
+.money-info-sum {
+  font-size: 30px;
+  font-weight: bold;
+}
+.money-info-period-date {
+  font-size: 22px;
+}
+.money-info-period-month {
+  padding: 3px 0 0;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.add {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.add-sum {
+  padding: 30px 0;
+  width: 100%;
+  color: #2bb971;
+  font-size: 50px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.add-info {
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 300;
+}
+.add-info-input {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: solid 2px #2bb971;
+}
+
+.add-day {
+  margin: 0 0 20px;
+  display: flex;
+  width: 100%;
+}
+.add-day-btn {
+  background: none;
+  border: none;
+  outline: none;
+  width: 50%;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 300;
+}
+.add-day-btn.true {
+  color: #fff;
+  background: #2bb971;
+  border-bottom: solid 1px #ededed;
+  border-radius: 25px;
+}
+
+.add-calculator {
+  display: flex;
+
+}
+.add-calculator-btn {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 12px;
+  box-sizing: border-box;
+  width: 33.33333%;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 300;
+  background: #2bb971;
+}

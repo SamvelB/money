@@ -1,0 +1,78 @@
+@import 'blocks.css';
+@import 'edit.css';
+@import 'money.css';
+@import 'history.css';
+
+div {
+    box-sizing: border-box;
+}
+html, body, #root {
+    width: 100%;
+    height: 100%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #ededed;
+}
+.web { height: calc(100% - 110px) }
+#root {
+    position: relative;
+}
+.web-wrapper {
+    height: 100%;
+}
+
+.spinner {
+    margin: 200px auto;
+    width: 200px;
+    height: 200px;
+    background: url("./images/spinner.gif") center center no-repeat;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 20px);
+    box-shadow: 0 0 10px 7px rgba(0,0,0,.1);
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    background: #2bb971;
+    background: linear-gradient(45deg, #fb83fa 0%,#e5de1d 100%);
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    padding: 0 30px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    border-top: solid 1px #e5e5e5;
+/*    box-shadow: 0 0 10px 7px rgba(0,0,0,.1);*/
+}
+
+.footer-button {
+    margin: 4px 0 0;
+    width: 55px;
+    height: 55px;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.footer-button-add {
+    margin: 10px 0 0;
+    width: 62px;
+    height: 62px;
+}
+.footer-button-history {
+    margin: 6px 0 0;
+    width: 56px;
+    height: 56px;
+}
