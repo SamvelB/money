@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
-import { getServerData, setServerData } from './data/axiosMethods'
+import { changeData } from './data'
+
+import { getServerData } from './data/axiosMethods'
 import Spinner from './Spinner'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -25,6 +27,7 @@ class App extends Component  {
     this.toHistory = this.toHistory.bind(this)
     this.openEdit = this.openEdit.bind(this)
     this.closeEditScreen = this.closeEditScreen.bind(this)
+    this.deletePay = this.deletePay.bind(this)
   }
 
   componentWillMount() {
@@ -38,14 +41,32 @@ class App extends Component  {
     getServerData(saveGetData)
   }
 
-  changeData(data) {
-    const saveSetData = (data) => {
-      this.setState(data)
-      console.log('data from server:', data)
-    }
-    setServerData(saveSetData, data)
-  }
+  deletePay(event){
+    const idButton = parseInt(event.target.id, 10)
+    const data = this.state.data
+    const history = data.history
+    const items = data.items
 
+    const historyItemObject = history.find(historyItem => historyItem.id === idButton)
+    const itemObject = items.find(item  => item.id === historyItemObject.group)
+
+    // delete from history
+    const historyIndex = history.findIndex((historyItem => historyItem.id === historyItemObject.id))
+    history.splice(historyIndex, 1);
+
+    // add into items
+    itemObject.spent = itemObject.spent - historyItemObject.sum
+    itemObject.left = itemObject.left + historyItemObject.sum
+    const itemIndex = items.findIndex((item => item.id === itemObject.id))
+    items[itemIndex] = itemObject
+
+    // create new data
+    data.history = history
+    data.items = items
+
+    changeData(data)
+    this.closeEditScreen()
+  }
 
   openEditScreen(groupId) {
     this.setState({ isOpenedEditScreen: true, selectedId: groupId })
@@ -79,7 +100,7 @@ class App extends Component  {
           { data == null
             ? <Spinner />
             : <div className="web-wrapper">
-                <Header currentDay={data != null && data.currentDay} openEditScreen={this.openEditScreen} />
+                <Header data={data != null && data} />
                 <div className="wrapper">
                   {
                     !isOpenedEditScreen &&
@@ -96,7 +117,7 @@ class App extends Component  {
                   }
                   {
                     isOpenedHistoryScreen &&
-                    <History history={data != null && data.history} />
+                    <History history={data != null && data.history} deletePay={this.deletePay} />
                   }
                 </div>
                 <Footer toHome={this.toHome} toHistory={this.toHistory} />

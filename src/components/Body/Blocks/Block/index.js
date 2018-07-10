@@ -11,7 +11,7 @@ const Block = ({ id, name, all, spent, left, openEdit }) => (
           </div>
           <div className="block-info-money">
             <span className="block-info-money-bbb">{left}</span>
-            <span className="block-info-money-aaa">{left !== 0 && '-'}{spent}</span>
+            <span className="block-info-money-aaa">{spent === 0 ? '' : '-'}{spent}</span>
           </div>
         </div>
       </button>

@@ -1,13 +1,11 @@
-import React from 'react'
-
 import { getServerData, setServerData } from './axiosMethods'
 
-const getData = () => {
-  const saveGetData = (response) => {
-    return response.data
-  }
-  getServerData(saveGetData)
-}
+// const getData = () => {
+//   const saveGetData = (response) => {
+//     return response.data
+//   }
+//   getServerData(saveGetData)
+// }
 
 const changeData = (data) => {
   const saveSetData = (data) => {
@@ -18,4 +16,4 @@ const changeData = (data) => {
 }
 
 
-export { getData, changeData }
+export { changeData }

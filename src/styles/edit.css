@@ -18,10 +18,10 @@
     background: none;
     border: none;
     outline: none;
-    padding: 20px 0;
+    padding: 15px 0;
     width: 100%;
     color: #44bd61;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 300;
     text-align: center;
 }
@@ -55,7 +55,7 @@
     border: none;
     outline: none;
     width: 50%;
-    height: 40px;
+    height: 30px;
     color: #deeaf6;
     font-size: 18px;
     font-weight: 300;

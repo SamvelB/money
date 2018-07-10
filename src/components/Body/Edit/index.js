@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { getDateYesterday, getDate } from '../../../utils/date'
+import { CURRENT_PRERIOD_GROUP } from '../../../utils/constants'
 import { changeData } from '../../../data'
 
 
@@ -59,6 +60,11 @@ class Edit extends React.Component {
     const currentItem = items.find(item => item.id === selectedId)
     const { value, comment } = this.state
 
+    if(value === '' || value == null) {
+      closeEditScreen()
+      return
+    }
+
     // new items
     currentItem.spent = currentItem.spent + parseInt(value, 10)
     currentItem.left = currentItem.all - currentItem.spent
@@ -66,6 +72,7 @@ class Edit extends React.Component {
 
     // in history
     let historyItem = {}
+    historyItem.id = new Date().getTime()
     historyItem.group = selectedId
     historyItem.groupName = currentItem.name
     historyItem.sum = parseInt(value, 10)
@@ -89,15 +96,21 @@ class Edit extends React.Component {
 
   render() {
     const { data, selectedId} = this.props
-    const { currentDay, items } = data
-    const { date, activeToday } = this.state
+    const { currentDay } = data
+    const { items } = data
+    const { activeToday } = this.state
 
-    const currentItem = items.find(item => item.id === selectedId)
+    let currentItem = null
+    if(selectedId === CURRENT_PRERIOD_GROUP) {
+      currentItem = currentDay
+    } else {
+      currentItem = items.find(item => item.id === selectedId)
+    }
 
     return (
         <div className="add">
           <div className="add-title">
-            {currentItem.name}
+            {currentItem != null && currentItem.name}
           </div>
           <div className="add-sum">
             <input className="add-sum-input" type="text" value={this.state.value} onChange={this.handleChange} />

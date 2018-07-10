@@ -4,6 +4,7 @@
     align-items: center;
     height: 100%;
     color: #fff;
+    border-bottom: solid 1px #ddd
 }
 .money-info-day,
 .money-info-period {
@@ -24,10 +25,13 @@
     background: none;
     border: none;
     outline: none;
-    padding: 0 50px;
+    padding: 10px 25px;
     color: #fff;
     font-size: 30px;
     font-weight: bold;
+    background: rgba(255,255,255, .2);
+    border-radius: 50px;
+    text-shadow: 0 1px 6px rgba(0,0,0, .2);
 }
 .money-info-period-date {
     font-size: 22px;

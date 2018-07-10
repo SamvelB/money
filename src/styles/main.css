@@ -36,7 +36,7 @@ html, body, #root {
 
 .header {
     width: 100%;
-    height: 80px;
+    height: 100px;
     background: #2bb971;
     background: linear-gradient(45deg, #fb83fa 0%,#e5de1d 100%);
 }
