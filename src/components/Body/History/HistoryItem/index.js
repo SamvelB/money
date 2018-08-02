@@ -7,8 +7,8 @@ const HistoryItem = ({ id, group, groupName, date, sum, comment, author, deleteP
         <div className="history-info">
           <div className="history-info-header">
             <div className="history-info-header-title">{groupName}</div>
-            <button id={id} className="history-info-header-all" onClick={deletePay}>
-              {sum === 0 ? '' : '-'}{sum} ₽
+            <button id={id} className={`history-info-header-all ${comment === 'Пополнение'}`} onClick={deletePay}>
+              {sum === 0 || comment === 'Пополнение' ? '' : '-'}{sum} ₽
             </button>
           </div>
           <div className="history-info-money">

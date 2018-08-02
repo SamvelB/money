@@ -1,0 +1,50 @@
+.payments {
+    padding: 5px 5px 55px;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.payments-item {
+    margin: 0 0 2px;
+    padding: 8px 16px;
+    width: 100%;
+    background: #fff;;
+    border-top: solid 1px #ebebeb;
+    border-right: solid 1px #e5e5e5;
+    border-left: solid 1px #e5e5e5;
+    border-bottom: solid 1px #cecece;
+}
+.payments-item.true {
+    background: #e5ffe2;
+}
+
+.payments-item:last-child {
+    margin: 0;
+}
+
+.payments-item__head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.payments-item__name {
+    margin: 0 0 10px;
+    font-size: 16px;
+}
+
+.payments-item__sum {
+    margin: 0 0 10px;
+    font-size: 16px;
+    color: #44bd61;
+}
+
+.payments-item__date {
+    margin: 0 10px 10px;
+    font-size: 16px;
+    color: #ffa970;
+}
+
+.payments-item__comments {
+    font-size: 12px;
+    color: #4c4c4c;
+}

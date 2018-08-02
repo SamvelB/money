@@ -6,7 +6,7 @@
 }
 
 .add-title {
-    padding: 10px 0;
+    padding: 12px 0;
     font-size: 22px;
     text-align: center;
     color: #56789a;
@@ -18,12 +18,15 @@
     background: none;
     border: none;
     outline: none;
-    padding: 15px 0;
+    padding: 20px 0;
     width: 100%;
-    color: #44bd61;
-    font-size: 40px;
+    color: #ff7272;
+    font-size: 32px;
     font-weight: 300;
     text-align: center;
+}
+.add-sum-input.true {
+    color: #44bd61;
 }
 
 .add-info {
@@ -32,7 +35,7 @@
 .add-info-input {
     margin: 0 auto;
     display: block;
-    padding: 10px 20px;
+    padding: 12px 20px;
     background: none;
     border: none;
     outline: none;
@@ -45,7 +48,7 @@
 }
 
 .add-day {
-    margin: 20px 0;
+    margin: 18px 0;
     padding: 0 25px;
     display: flex;
     width: 100%;
@@ -74,7 +77,7 @@
     background: none;
     border: none;
     outline: none;
-    padding: 10px;
+    padding: 12px;
     box-sizing: border-box;
     width: 33.33333%;
     color: #56789a;

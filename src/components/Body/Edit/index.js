@@ -14,6 +14,7 @@ class Edit extends React.Component {
       date: null,   // вчера или сегодня
       value: '',
       comment: '',
+      replenish: false, // режим пополнения
     }
 
     this.setToday = this.setToday.bind(this)
@@ -23,6 +24,7 @@ class Edit extends React.Component {
     this.handleChangeComment = this.handleChangeComment.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
+    this.replenishToggle = this.replenishToggle.bind(this)
   }
 
   componentWillMount() {
@@ -35,6 +37,17 @@ class Edit extends React.Component {
 
   setYesterday() {
     this.setState({ date: getDateYesterday(), activeToday: false })
+  }
+
+  replenishToggle() {
+    if(this.state.replenish) {
+      this.setState({ comment: '' })
+    } else {
+      this.setState({ comment: 'Пополнение' })
+    }
+    this.setState(prevState => ({
+      replenish: !prevState.replenish
+    }))
   }
 
   handleChange(event) {
@@ -65,10 +78,20 @@ class Edit extends React.Component {
       return
     }
 
+    console.log('replenish:', this.state.replenish)
+
     // new items
-    currentItem.spent = currentItem.spent + parseInt(value, 10)
-    currentItem.left = currentItem.all - currentItem.spent
-    items[selectedId] = currentItem
+    if(this.state.replenish) {
+      console.log('replenish if')
+      //currentItem.spent = currentItem.spent - parseInt(value, 10)
+      currentItem.left = currentItem.left + parseInt(value, 10)
+      items[selectedId] = currentItem
+    } else {
+      console.log('replenish else')
+      currentItem.spent = currentItem.spent + parseInt(value, 10)
+      currentItem.left = currentItem.left - parseInt(value, 10)
+      items[selectedId] = currentItem
+    }
 
     // in history
     let historyItem = {}
@@ -98,7 +121,7 @@ class Edit extends React.Component {
     const { data, selectedId} = this.props
     const { currentDay } = data
     const { items } = data
-    const { activeToday } = this.state
+    const { activeToday, replenish } = this.state
 
     let currentItem = null
     if(selectedId === CURRENT_PRERIOD_GROUP) {
@@ -113,12 +136,13 @@ class Edit extends React.Component {
             {currentItem != null && currentItem.name}
           </div>
           <div className="add-sum">
-            <input className="add-sum-input" type="text" value={this.state.value} onChange={this.handleChange} />
+            <input className={`add-sum-input ${replenish}`} type="text" value={this.state.value} onChange={this.handleChange} />
           </div>
           <div className="add-info">
             <input className="add-info-input" type="text" value={this.state.comment} onChange={this.handleChangeComment} />
           </div>
           <div className="add-day">
+            <button className={`add-day-btn ${replenish}`} onClick={this.replenishToggle}>Пополнение</button>
             <button className={`add-day-btn ${!activeToday}`} onClick={this.setYesterday}>Вчера</button>
             <button className={`add-day-btn ${activeToday}`} onClick={this.setToday}>Сегодня</button>
           </div>
@@ -138,7 +162,7 @@ class Edit extends React.Component {
             <button id="9" className="add-calculator-btn" onClick={this.handleChange}>9</button>
           </div>
           <div className="add-calculator">
-            <button id="del" className="add-calculator-btn delete" onClick={this.handleDelete}>⮜</button>
+            <button id="del" className="add-calculator-btn delete" onClick={this.handleDelete}>◅</button>
             <button id="0" className="add-calculator-btn" onClick={this.handleChange}>0</button>
             <button id="ok" className="add-calculator-btn ok" onClick={this.handleSubmit}>OK</button>
           </div>

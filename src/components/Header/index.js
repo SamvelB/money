@@ -15,46 +15,51 @@ class Header extends React.Component {
 
     this.state = {}
 
-    this.getPeriod = this.getPeriod.bind(this)
-    this.getLeftSumForPeriod = this.getLeftSumForPeriod.bind(this)
-    this.getDayFromBeginningPeriod = this.getDayFromBeginningPeriod.bind(this)
-    this.getLimitMoney = this.getLimitMoney.bind(this)
+    // this.getPeriod = this.getPeriod.bind(this)
+    // this.getLeftSumForPeriod = this.getLeftSumForPeriod.bind(this)
+    // this.getDayFromBeginningPeriod = this.getDayFromBeginningPeriod.bind(this)
+    // this.getLimitMoney = this.getLimitMoney.bind(this)
   }
 
-  getLeftSumForPeriod(items) {
-    const dayFromBeginningPeriod = this.getDayFromBeginningPeriod()
-    let limitMoney = this.getLimitMoney(dayFromBeginningPeriod)
-    const leftMoneyForFood = items[0].left
-    return  leftMoneyForFood - limitMoney
-  }
-
-  getDayFromBeginningPeriod() {
-    if(day >= 5) {
-      return day - 4
-    } else {
-      if(daysInCurrentMonth === 30) {
-        const daysInCurrentLastMonth = 31
-        return daysInCurrentLastMonth - 5 + day
-      } else if(daysInCurrentMonth === 31) {
-        const daysInCurrentLastMonth = 30
-        return daysInCurrentLastMonth - 5 + day
-      }
-      else if(daysInCurrentMonth === 29 || daysInCurrentMonth === 28) {
-        const daysInCurrentLastMonth = 31
-        return daysInCurrentLastMonth - 5 + day
-      }
-    }
-  }
-
-  getLimitMoney(dayFromBeginningPeriod) {
-    let preLimit = (31 - dayFromBeginningPeriod) * 1000
-    if(dayNumber === 1) {
-      return preLimit + 1000
-    } else {
-      return preLimit
-    }
-  }
-
+  // getLeftSumForPeriod(items) {
+  //   const dayFromBeginningPeriod = this.getDayFromBeginningPeriod()
+  //   console.log('dayFromBeginningPeriod:', dayFromBeginningPeriod)
+  //
+  //   let limitMoney = this.getLimitMoney(dayFromBeginningPeriod)
+  //   const leftMoneyForFood = items[0].left
+  //   return  leftMoneyForFood - limitMoney
+  // }
+  //
+  // getDayFromBeginningPeriod() {
+  //   console.log('day:', day)
+  //   if(day >= 5) {
+  //     return day - 4
+  //     console.log('daysInCurrentMonth >=5')
+  //   } else {
+  //     if(daysInCurrentMonth === 30) {
+  //       const daysInCurrentLastMonth = 31
+  //       return daysInCurrentLastMonth - 5 + day
+  //     } else if(daysInCurrentMonth === 31) {
+  //       const daysInCurrentLastMonth = 30
+  //       return daysInCurrentLastMonth - 5 + day
+  //     }
+  //     else if(daysInCurrentMonth === 29 || daysInCurrentMonth === 28) {
+  //       const daysInCurrentLastMonth = 31
+  //       return daysInCurrentLastMonth - 5 + day
+  //     }
+  //   }
+  // }
+  //
+  // getLimitMoney(dayFromBeginningPeriod) {
+  //   let preLimit = (31 - dayFromBeginningPeriod) * 1000
+  //   console.log('preLimit:', preLimit)
+  //   if(dayNumber === 1) {
+  //     return preLimit + 1000
+  //   } else {
+  //     return preLimit
+  //   }
+  // }
+  //
   getPeriod(){
     if(dayNumber === 1) {
       if(day === daysInCurrentMonth) {
@@ -72,7 +77,7 @@ class Header extends React.Component {
     const { items } = data
 
     const period = this.getPeriod()
-    const leftSumForPeriod = this.getLeftSumForPeriod(items)
+    // const leftSumForPeriod = this.getLeftSumForPeriod(items)
 
 
     return (
@@ -88,7 +93,7 @@ class Header extends React.Component {
               </div>
             </div>
             <button id={CURRENT_PRERIOD_GROUP} className="money-info-sum">
-              {leftSumForPeriod}
+              {items[2].left}
             </button>
             <div className="money-info-period">
               <div className="money-info-period-date">

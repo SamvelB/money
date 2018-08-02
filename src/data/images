@@ -20,50 +20,50 @@
 
 
 .block-icon.block-icon--0 {
-    background: #61c057 url("../media/icon-0.abcdf808.svg") 50%/70% no-repeat
+    background: #ea7449 url(../media/icon-5.00cf1508.svg) 50%/70% no-repeat
 }
 
 .block-icon.block-icon--1 {
-    background: #42b5c0 url("../media/icon-1.49e20988.svg") 50%/65% no-repeat
+    background: #8155e0 url(../media/icon-0.abcdf808.svg) 50%/65% no-repeat
 }
 
 .block-icon.block-icon--2 {
-    background: #eab947 url("../media/icon-2.eae42869.svg") 50%/65% no-repeat
+    background: #61c057 url(../media/icon-0.abcdf808.svg) 50%/65% no-repeat
 }
 
 .block-icon.block-icon--3 {
-    background: #dc4aca url("../media/icon-3.fdf3c11e.svg") 50%/65% no-repeat
+    background: #42b5c0 url(../media/icon-1.49e20988.svg) 50%/65% no-repeat
 }
 
 .block-icon.block-icon--4 {
-    background: #8155e0 url("../media/icon-4.e375c970.svg") 50%/75% no-repeat
+    background: #eab947 url(../media/icon-2.eae42869.svg) 50%/75% no-repeat
 }
 
 .block-icon.block-icon--5 {
-    background: #ea7449 url("../media/icon-5.00cf1508.svg") 50%/60% no-repeat
+    background: #dc4aca url(../media/icon-3.fdf3c11e.svg) 50%/60% no-repeat
 }
 
 
 .history-icon.history-icon--0 {
-    background: #61c057 url("../media/icon-0.abcdf808.svg") 50%/70% no-repeat
+    background: #ea7449 url(../media/icon-5.00cf1508.svg) 50%/70% no-repeat
 }
 
 .history-icon.history-icon--1 {
-    background: #42b5c0 url("../media/icon-1.49e20988.svg") 50%/65% no-repeat
+    background: #8155e0 url(../media/icon-0.abcdf808.svg) 50%/65% no-repeat
 }
 
 .history-icon.history-icon--2 {
-    background: #eab947 url("../media/icon-2.eae42869.svg") 50%/65% no-repeat
+    background: #61c057 url(../media/icon-0.abcdf808.svg) 50%/65% no-repeat
 }
 
 .history-icon.history-icon--3 {
-    background: #dc4aca url("../media/icon-3.fdf3c11e.svg") 50%/65% no-repeat
+    background: #42b5c0 url(../media/icon-1.49e20988.svg) 50%/65% no-repeat
 }
 
 .history-icon.history-icon--4 {
-    background: #8155e0 url("../media/icon-4.e375c970.svg") 50%/75% no-repeat
+    background: #eab947 url(../media/icon-2.eae42869.svg) 50%/75% no-repeat
 }
 
 .history-icon.history-icon--5 {
-    background: #ea7449 url("../media/icon-5.00cf1508.svg") 50%/60% no-repeat
+    background: #dc4aca url(../media/icon-3.fdf3c11e.svg) 50%/60% no-repeat
 }

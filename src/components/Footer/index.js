@@ -3,35 +3,25 @@ import React from 'react'
 class Footer extends React.Component {
 
   render() {
-    const { toHome, toHistory } = this.props
+    const { toHome, toHistory, toPayments, isOpenedEditScreen, isOpenedHistoryScreen, isOpenedPaymentsScreen } = this.props
+    let activeMainScreen = !isOpenedEditScreen && !isOpenedHistoryScreen && !isOpenedPaymentsScreen
 
     return (
       <footer className="footer">
-        <button className="footer-button footer-button-add" onClick={toHome}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
-            <g>
-              <path d="M26,0C11.664,0,0,11.663,0,26s11.664,26,26,26s26-11.663,26-26S40.336,0,26,0z M26,50C12.767,50,2,39.233,2,26   S12.767,2,26,2s24,10.767,24,24S39.233,50,26,50z" fill="#56789a"/>
-              <path d="M38.5,25H27V14c0-0.553-0.448-1-1-1s-1,0.447-1,1v11H13.5c-0.552,0-1,0.447-1,1s0.448,1,1,1H25v12c0,0.553,0.448,1,1,1   s1-0.447,1-1V27h11.5c0.552,0,1-0.447,1-1S39.052,25,38.5,25z" fill="#56789a"/>
-            </g>
+        <button className={`footer-button footer-button-add ${isOpenedPaymentsScreen}`} onClick={toPayments}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 57 57">
+            <path d="M22.66 0H3.34A3.343 3.343 0 0 0 0 3.34v19.32A3.343 3.343 0 0 0 3.34 26h19.32A3.343 3.343 0 0 0 26 22.66V3.34A3.343 3.343 0 0 0 22.66 0zM33.34 26h19.32A3.343 3.343 0 0 0 56 22.66V3.34A3.343 3.343 0 0 0 52.66 0H33.34A3.343 3.343 0 0 0 30 3.34v19.32A3.343 3.343 0 0 0 33.34 26zM22.66 30H3.34A3.343 3.343 0 0 0 0 33.34v19.32A3.343 3.343 0 0 0 3.34 56h19.32A3.343 3.343 0 0 0 26 52.66V33.34A3.343 3.343 0 0 0 22.66 30zM55 41H45V31a2 2 0 0 0-4 0v10H31a2 2 0 0 0 0 4h10v10a2 2 0 0 0 4 0V45h10a2 2 0 0 0 0-4z"/>
           </svg>
         </button>
-        <button className="footer-button footer-button-home" onClick={toHome}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
-            <g>
-              <path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30   S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z" fill="#56789a"/>
-              <path d="M30,22c-4.411,0-8,3.589-8,8s3.589,8,8,8s8-3.589,8-8S34.411,22,30,22z M30,36c-3.309,0-6-2.691-6-6s2.691-6,6-6   s6,2.691,6,6S33.309,36,30,36z" fill="#56789a"/>
-              <path d="M30,16c-7.72,0-14,6.28-14,14s6.28,14,14,14s14-6.28,14-14S37.72,16,30,16z M30,42c-6.617,0-12-5.383-12-12s5.383-12,12-12   s12,5.383,12,12S36.617,42,30,42z" fill="#56789a"/>
-            </g>
+        <button className={`footer-button footer-button-home ${activeMainScreen}`} onClick={toHome}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 56">
+            <path d="M28 0C12.561 0 0 12.561 0 28s12.561 28 28 28 28-12.561 28-28S43.439 0 28 0zM15 15h26a1 1 0 1 1 0 2H15a1 1 0 1 1 0-2zm26 26H15a1 1 0 1 1 0-2h26a1 1 0 1 1 0 2zm4-8H11a1 1 0 1 1 0-2h34a1 1 0 1 1 0 2zm0-8H11a1 1 0 1 1 0-2h34a1 1 0 1 1 0 2z"/>
           </svg>
         </button>
-        <button className="footer-button footer-button-history" onClick={toHistory}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60">
-            <g>
-              <path d="M28,0C12.561,0,0,12.561,0,28s12.561,28,28,28s28-12.561,28-28S43.439,0,28,0z M28,54C13.663,54,2,42.336,2,28   S13.663,2,28,2s26,11.664,26,26S42.337,54,28,54z" fill="#56789a"/>
-              <path d="M40,16H16c-0.553,0-1,0.448-1,1s0.447,1,1,1h24c0.553,0,1-0.448,1-1S40.553,16,40,16z" fill="#56789a"/>
-              <path d="M40,27H16c-0.553,0-1,0.448-1,1s0.447,1,1,1h24c0.553,0,1-0.448,1-1S40.553,27,40,27z" fill="#56789a"/>
-              <path d="M40,38H16c-0.553,0-1,0.448-1,1s0.447,1,1,1h24c0.553,0,1-0.448,1-1S40.553,38,40,38z" fill="#56789a"/>
-            </g>
+        <button className={`footer-button footer-button-history ${isOpenedHistoryScreen}`} onClick={toHistory}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 58.201 58.201">
+            <path d="M31.707 33.07a81.522 81.522 0 0 1-5.22 0c-7.341-.201-13.191-1.238-17.403-2.717C7.104 29.685 5.409 28.899 4.1 28v9.4c2.846 2.971 12.394 5.711 25 5.711s22.154-2.74 25-5.711V28c-1.318.905-3.028 1.697-5.025 2.367-4.21 1.472-10.048 2.503-17.368 2.703z"/>
+            <path d="M4.1 14.889v9.4c2.638 2.754 11.033 5.31 22.286 5.668.115.004.233.005.349.008.326.009.651.018.982.023a79.019 79.019 0 0 0 2.766.001c.33-.005.656-.014.982-.023l.349-.008c11.253-.359 19.648-2.915 22.286-5.668v-9.401C49.233 18.232 38.944 20 29.1 20s-20.132-1.768-25-5.111zM53.965 8.542C52.843 4.241 44.215 0 29.1 0 14.023 0 5.404 4.22 4.247 8.51A.97.97 0 0 0 4.1 9v2.306C6.937 14.267 16.417 17 29.1 17s22.164-2.733 25-5.694V9a.92.92 0 0 0-.135-.458zM4.1 41v8.201a.94.94 0 0 0 .117.451c1.181 4.895 11.747 8.549 24.883 8.549 13.106 0 23.655-3.639 24.875-8.516a.993.993 0 0 0 .125-.484v-8.199c-4.135 2.911-12.655 5.199-25 5.199-12.346 0-20.866-2.29-25-5.201z"/>
           </svg>
         </button>
       </footer>

@@ -9,8 +9,6 @@ class History extends React.Component {
     const day = date.getDate()
     const dayBefore = date.getDate() - 1
 
-    console.log('history:', history)
-
     return (
         <div className="history">
           <div className="history-title">

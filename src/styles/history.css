@@ -1,6 +1,5 @@
 .history {
     width: 100%;
-    height: 100%;
     overflow-y: scroll;
 }
 
@@ -17,14 +16,13 @@
 
 .history-item {
     margin: 0;
-    padding: 16px;
+    padding: 8px 16px;
     box-sizing: border-box;
     width: 100%;
     background: #fff;
     border-top: solid 1px #ebebeb;
     border-right: solid 1px #e5e5e5;
     border-left: solid 1px #e5e5e5;
-    border-bottom: solid 1px #cecece;
 }
 
 .history-button {
@@ -41,16 +39,16 @@
 .history-icon {
     margin: 0 20px 0 0;
     flex: 0 0 auto;
-    width: 50px;
-    height: 50px;
+    width: 46px;
+    height: 46px;
     border-radius: 50px;
 }
-.history-icon.history-icon--0 {background: #61c057 url("./images/icon-0.svg") center center / 70% no-repeat;  }
-.history-icon.history-icon--1 {background: #42b5c0 url("./images/icon-1.svg") center center / 65% no-repeat;  }
-.history-icon.history-icon--2 {background: #eab947 url("./images/icon-2.svg") center center / 65% no-repeat;  }
-.history-icon.history-icon--3 {background: #dc4aca url("./images/icon-3.svg") center center / 65% no-repeat;  }
-.history-icon.history-icon--4 {background: #8155e0 url("./images/icon-4.svg") center center / 75% no-repeat;  }
-.history-icon.history-icon--5 {background: #ea7449 url("./images/icon-5.svg") center center / 60% no-repeat;  }
+.history-icon.history-icon--0 {background: #ea7449 url("./images/icon-5.svg") center center / 70% no-repeat;  }
+.history-icon.history-icon--1 {background: #8155e0 url("./images/icon-0.svg") center center / 65% no-repeat;  }
+.history-icon.history-icon--2 {background: #61c057 url("./images/icon-0.svg") center center / 65% no-repeat;  }
+.history-icon.history-icon--3 {background: #42b5c0 url("./images/icon-1.svg") center center / 65% no-repeat;  }
+.history-icon.history-icon--4 {background: #eab947 url("./images/icon-2.svg") center center / 75% no-repeat;  }
+.history-icon.history-icon--5 {background: #dc4aca url("./images/icon-3.svg") center center / 60% no-repeat;  }
 
 .history-info {
     width: 100%;
@@ -74,6 +72,9 @@
     font-size: 16px;
     font-weight: bold;
     color: #ee4f77;
+}
+.history-info-header-all.true {
+    color: #44bd61;
 }
 
 .history-info-money {

@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 import Blocks from './components/Body/Blocks'
 import Edit from './components/Body/Edit'
 import History from './components/Body/History'
+import Payments from './components/Body/Payments'
 
 class App extends Component  {
   constructor(props) {
@@ -19,6 +20,7 @@ class App extends Component  {
       selectedId: undefined,
       isOpenedHistoryScreen: false,
       isOpenedEditScreen: false,
+      isOpenedPaymentsScreen: false,
     }
 
     this.getData = this.getData.bind(this)
@@ -28,6 +30,7 @@ class App extends Component  {
     this.openEdit = this.openEdit.bind(this)
     this.closeEditScreen = this.closeEditScreen.bind(this)
     this.deletePay = this.deletePay.bind(this)
+    this.toPayments = this.toPayments.bind(this)
   }
 
   componentWillMount() {
@@ -77,12 +80,28 @@ class App extends Component  {
   }
 
   toHome() {
-    this.setState({ isOpenedEditScreen: false, isOpenedHistoryScreen: false })
+    this.setState({
+      isOpenedEditScreen: false,
+      isOpenedHistoryScreen: false,
+      isOpenedPaymentsScreen: false,
+    })
     this.closeEditScreen()
   }
 
   toHistory() {
-    this.setState({ isOpenedEditScreen: false, isOpenedHistoryScreen: true })
+    this.setState({
+      isOpenedEditScreen: false,
+      isOpenedHistoryScreen: true
+    })
+    this.closeEditScreen()
+  }
+
+  toPayments() {
+    this.setState({
+      isOpenedEditScreen: false,
+      isOpenedHistoryScreen: false,
+      isOpenedPaymentsScreen: true,
+    })
     this.closeEditScreen()
   }
 
@@ -93,7 +112,8 @@ class App extends Component  {
 
 
   render () {
-    const { data, selectedId, isOpenedEditScreen, isOpenedHistoryScreen } = this.state
+    const { data, selectedId, isOpenedEditScreen, isOpenedHistoryScreen, isOpenedPaymentsScreen } = this.state
+
 
     return (
         <div className="web">
@@ -105,6 +125,7 @@ class App extends Component  {
                   {
                     !isOpenedEditScreen &&
                     !isOpenedHistoryScreen &&
+                    !isOpenedPaymentsScreen &&
                     <Blocks items={data != null && data.items} openEdit={this.openEdit} />
                   }
                   {
@@ -119,8 +140,19 @@ class App extends Component  {
                     isOpenedHistoryScreen &&
                     <History history={data != null && data.history} deletePay={this.deletePay} />
                   }
+                  {
+                    isOpenedPaymentsScreen &&
+                    <Payments payments={data != null && data.payments} />
+                  }
                 </div>
-                <Footer toHome={this.toHome} toHistory={this.toHistory} />
+                <Footer
+                    isOpenedEditScreen={isOpenedEditScreen}
+                    isOpenedHistoryScreen={isOpenedHistoryScreen}
+                    isOpenedPaymentsScreen={isOpenedPaymentsScreen}
+                    toPayments={this.toPayments}
+                    toHome={this.toHome}
+                    toHistory={this.toHistory}
+                />
               </div>
           }
         </div>
