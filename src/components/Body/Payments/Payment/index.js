@@ -1,25 +1,22 @@
 import React from 'react'
 
-const Payment = ({ id, name, sum, date, status, comments }) => (
-  <div className={`payments-item ${status}`} id={id}>
-    <div className="payments-item__head">
-      <div className="payments-item__name">
-        {name}
-      </div>
-      <div>
+const Payment = ({ id, name, sum, date, status, comments, handleSubmit }) => (
+  <button className={`payments-item ${status}`} id={id} onClick={handleSubmit}>
+    <span className="payments-item__head">
+      <span className="payments-item__name">
+        <span>{name}</span>
         <span className="payments-item__date">
-          {date}
+          {`до ${date}-го числа`}
         </span>
-        <span className="payments-item__sum">
-          {sum}
-        </span>
-      </div>
-    </div>
-
-    <div className="payments-item__comments">
+      </span>
+      <span className="payments-item__sum">
+        {sum}
+      </span>
+    </span>
+    <span className="payments-item__comments">
       {comments}
-    </div>
-  </div>
+    </span>
+  </button>
 )
 
 export default Payment

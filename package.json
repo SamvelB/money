@@ -1,7 +1,7 @@
 {
-  "name": "Appast money web view",
-  "description": null,
-  "version": "1.0.1",
+  "name": "Appast-money",
+  "description": "",
+  "version": "1.2.0",
   "dependencies": {
     "autoprefixer": "^8.6.3",
     "axios": "^0.18.0",

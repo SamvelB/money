@@ -4,6 +4,11 @@
     overflow-y: scroll;
 }
 
+.payments-item.income {
+    padding-top: 18px;
+    background: #fffdca;
+}
+
 .payments-item {
     margin: 0 0 2px;
     padding: 8px 16px;
@@ -16,6 +21,7 @@
 }
 .payments-item.true {
     background: #e5ffe2;
+    opacity: 0.5;
 }
 
 .payments-item:last-child {
@@ -40,11 +46,13 @@
 
 .payments-item__date {
     margin: 0 10px 10px;
-    font-size: 16px;
-    color: #ffa970;
+    font-size: 12px;
+    color: #c75959;
 }
 
 .payments-item__comments {
+    display: block;
     font-size: 12px;
-    color: #4c4c4c;
+    color: #848484;
+    text-align: justify;
 }

@@ -142,7 +142,7 @@ class App extends Component  {
                   }
                   {
                     isOpenedPaymentsScreen &&
-                    <Payments payments={data != null && data.payments} />
+                    <Payments data={data != null && data} getData={this.getData} />
                   }
                 </div>
                 <Footer

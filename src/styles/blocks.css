@@ -15,7 +15,7 @@
     border-bottom: solid 1px #cecece;
 }
 .block:nth-child(3) {
-    background: #e5ffe2;
+    background: #fffdca;
 }
 
 .block:last-child {
@@ -60,6 +60,7 @@
     margin: 0;
     font-size: 16px;
     color: #7f7f7f;
+    text-align: left;
 }
 .block-info-header-all {
     font-size: 14px;

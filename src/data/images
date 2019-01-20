@@ -67,3 +67,8 @@
 .history-icon.history-icon--5 {
     background: #dc4aca url(../media/icon-3.fdf3c11e.svg) 50%/60% no-repeat
 }
+
+
+
+
+    background: url(../media/spinner.76d110ec.gif) 50% no-repeat
