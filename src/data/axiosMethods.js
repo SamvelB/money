@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const getServerData = (saveGetData) => {
 	axios
-		.get(`http://appast.ru/money/back/get.php`)
+		.get(`http://0.0.0.0:5000/get-data`)
 		.then(response => {
 			saveGetData(response)
 		})
@@ -10,7 +10,7 @@ const getServerData = (saveGetData) => {
 
 const setServerData = (saveSetData, data) => {
 	axios
-		.post(`http://appast.ru/money/back/set.php`, data)
+		.post(`http://0.0.0.0:5000/set-data`, data)
 		.then(response => {
 			console.log('response status:' + response.status)
 			saveSetData(response.data)
